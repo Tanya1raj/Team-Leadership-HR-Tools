@@ -1,0 +1,338 @@
+/* ====================== */
+/* RESET & BASE LAYOUT    */
+/* ====================== */
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter', sans-serif;
+  background-color: #f9fafb;
+  color: #1e293b;
+  line-height: 1.6;
+}
+
+/* ====================== */
+/* HEADER SECTION         */
+/* ====================== */
+header {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+header p {
+  margin: 10px 0;
+  font-size: 1.15rem;
+}
+
+/* ====================== */
+/* NAVIGATION BAR         */
+/* ====================== */
+.navbar-container {
+  background: linear-gradient(to right, #1f2937, #0f172a);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 16px 24px;
+  margin: 0;
+  gap: 28px;
+}
+
+.navbar li {
+  margin: 0;
+}
+
+.navbar a {
+  position: relative;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 14px;
+  transition: color 0.3s ease;
+}
+
+.navbar a::after {
+  content: "";
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #3b82f6;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #93c5fd;
+}
+
+.navbar a:hover::after,
+.navbar a.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.navbar a.active {
+  color: #3b82f6;
+}
+
+/* ====================== */
+/* MAIN CONTENT & SECTIONS*/
+/* ====================== */
+main {
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.toolkit-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: space-between;
+}
+
+.toolkit-section {
+  flex: 1 1 calc(50% - 24px);
+  border-radius: 14px;
+  padding: 30px 25px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  background: linear-gradient(135deg, #ffffff, #f2f6fa);
+  border-left: 6px solid #6a11cb;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.toolkit-section:nth-child(2) { border-left-color: #ff6b6b; }
+.toolkit-section:nth-child(3) { border-left-color: #1dd1a1; }
+.toolkit-section:nth-child(4) { border-left-color: #ffa502; }
+
+.toolkit-section:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.toolkit-section h2 {
+  color: #2f3542;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.toolkit-section p {
+  font-size: 1rem;
+  color: #4b4b63;
+  line-height: 1.6;
+}
+
+/* ====================== */
+/* BUTTONS                */
+/* ====================== */
+.button {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 12px 22px;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+  background: linear-gradient(90deg, #2575fc, #6a11cb);
+  transform: scale(1.05);
+}
+
+/* ====================== */
+/* WELCOME SECTION        */
+/* ====================== */
+.welcome-section {
+  text-align: center;
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.welcome-section h1 {
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+  color: #1e293b;
+}
+
+.welcome-section p {
+  font-size: 1.1rem;
+  color: #4b5563;
+}
+
+/* ====================== */
+/* FOOTER                 */
+/* ====================== */
+footer, .site-footer {
+  background: #0f172a;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.95rem;
+  border-top: 2px solid #1f2937;
+  width: 100%;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
+}
+
+/* ====================== */
+/* RESPONSIVE DESIGN      */
+/* ====================== */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .toolkit-section {
+    flex: 1 1 100%;
+  }
+
+  .welcome-section {
+    padding: 40px 16px;
+  }
+}
+
+
+/* Section Container Styles */
+.toolkit-section {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 30px 25px;
+  margin: 40px auto;
+  max-width: 1000px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Add hover effect for subtle interaction */
+.toolkit-section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* Section Title Styling */
+.toolkit-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+  color: #1f2937;
+}
+
+/* Paragraphs inside the section */
+.toolkit-section p {
+  font-size: 1rem;
+  color: #374151;
+  line-height: 1.6;
+}
+
+/* Optional: List Styling Inside Sections */
+.toolkit-section ul {
+  margin-top: 20px;
+  padding-left: 20px;
+  list-style-type: "✅ ";
+}
+
+.toolkit-section li {
+  margin-bottom: 10px;
+  color: #334155;
+}
+
+
+
+/* Base font setup */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f3f4f6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Toolkit Section Container */
+.toolkit-section {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 40px 30px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Section Header */
+.toolkit-section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #1f2937;
+}
+
+/* Card Styling */
+.card {
+  background-color: #f9fafb;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+/* Inside Card Text */
+.card h3 {
+  margin-top: 0;
+  color: #111827;
+  font-size: 1.25rem;
+}
+
+.card p {
+  color: #374151;
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+
+/* Button Style */
+.button {
+  display: inline-block;
+  background-color: #2563eb;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.button:hover {
+  background-color: #1d4ed8;
+}
